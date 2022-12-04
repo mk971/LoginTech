@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "666e1298-3032-4354-9df8-9cfe2ff69eb3",
+		"name": "Login API TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24601978"
+	},
+	"item": [
+		{
+			"name": "Login user -> Status code 200",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test123@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				},
+				"description": "Testing if user will login with given info! (Passed)."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Created -> Status code 201",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-length": true,
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"123@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_created",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_created"
+					]
+				},
+				"description": "Testing the status code of 201 if the request will be fulfilled"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Permanent Redirect -> Status code 301",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"123@gmail.com\",\r\n  \"password\": \"123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_permanent_redirect",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_permanent_redirect"
+					]
+				},
+				"description": "Testing the status code of 301 which will singal a permanent redirect from one url to another."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Temporary redirect -> Status code 302",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"123@gmail.com\",\r\n  \"password\": \"123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_temporary_redirect",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_temporary_redirect"
+					]
+				},
+				"description": "Testing the status code 302 of temporary redirect which indicates the resource requested has been temporary moved from one url by location header."
+			},
+			"response": []
+		},
+		{
+			"name": "Login not modified -> Status code 304",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test123@gmail.com\",\r\n    \"password\": \"test123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_not_modified",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_not_modified"
+					]
+				},
+				"description": "Testing the Error 304 which is when the resouce you are looking for is unavailable"
+			},
+			"response": []
+		},
+		{
+			"name": "Login bad request -> Status code 400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1323@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_bad_request",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_bad_request"
+					]
+				},
+				"description": "Testing the Error 400 when a bad request is sent."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Authentication -> Status code 401 ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test123@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_authentication",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_authentication"
+					]
+				},
+				"description": "Testing the error code 401 when authentication is required"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Forbbiden -> Status code 403",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1223@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_forbbiden",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_forbbiden"
+					]
+				},
+				"description": "Testing the error code 403 when the email is forbbiden."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Not found (user) -> Status code 403",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email:\":\"\",\r\n    \"password\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_not_found",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_not_found"
+					]
+				},
+				"description": "Testing the error 403 which is when the email or password are not found."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Not Available -> Status code 410",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"testtest123@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_not_available",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_not_available"
+					]
+				},
+				"description": "Testing the status code 410 when the resource requised is no longer available"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Unexpected issue-> Status code 500",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"1233@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_unexpected_issue",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_unexpected_issue"
+					]
+				},
+				"description": "Testing the error code of 500 when something unexpected happend."
+			},
+			"response": []
+		},
+		{
+			"name": "Login Service Unavailable-> Status code 503",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test123@gmail.com\",\r\n    \"password\": \"test123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://amar55.free.beeceptor.com/login_service_unavailable",
+					"protocol": "https",
+					"host": [
+						"amar55",
+						"free",
+						"beeceptor",
+						"com"
+					],
+					"path": [
+						"login_service_unavailable"
+					]
+				},
+				"description": "Testing the status code of 503 which is when a service is unavailable"
+			},
+			"response": []
+		}
+	]
+}
